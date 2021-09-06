@@ -6,9 +6,9 @@ namespace lecture01.test
     public class UnitTest1
     {
         [Fact]
-        public void prints_out_hello_world()
+        public void divisible_by_four()
         {
-            
+            Assert.True(Program.IsLeapYear(16));
         }
     }
 }

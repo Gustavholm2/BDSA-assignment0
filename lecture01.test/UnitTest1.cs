@@ -42,7 +42,7 @@ namespace lecture01.test
 
         //Act
         Console.SetIn(new StringReader("2020"));
-        Program.Main(new String[0]);
+        Program.Main(new string[0]);
         var output = writer.GetStringBuilder().ToString().Trim()[^3..^0];
         
         //Assert
@@ -59,11 +59,43 @@ namespace lecture01.test
         
         //Act
         Console.SetIn(new StringReader("2021"));
-        Program.Main(new String[0]);
+        Program.Main(new string[0]);
         var output = writer.GetStringBuilder().ToString().Trim()[^3..^0];
         
         //Assert
         Assert.Equal("nay", output);
+        }
+
+        [Fact]
+        public void NotAnInt()
+        {
+        //Arrange
+        var writer = new StringWriter();
+        Console.SetOut(writer);
+
+        //Act
+        Console.SetIn(new StringReader("foobar"));
+        Program.Main(new string[0]);
+        var output = writer.GetStringBuilder().ToString().Trim();
+        
+        //Assert
+        Assert.Equal("not an int", output);
+        }
+
+        [Fact]
+        public void Before1582()
+        {
+        //Arrange
+        var writer = new StringWriter();
+        Console.SetOut(writer);
+        
+        //Act
+        Console.SetIn(new StringReader("1000"));
+        Program.Main(new string[0]);
+        var output = writer.GetStringBuilder().ToString().Trim();
+        
+        //Assert
+        Assert.Equal("Choose a number after 1582", output);
         }
     }
 

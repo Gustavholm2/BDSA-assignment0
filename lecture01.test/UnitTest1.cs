@@ -79,7 +79,7 @@ namespace lecture01.test
         var output = writer.GetStringBuilder().ToString().Trim();
         
         //Assert
-        Assert.Equal("not an int", output);
+        Assert.EndsWith("Not an int", output);
         }
 
         [Fact]
@@ -95,7 +95,7 @@ namespace lecture01.test
         var output = writer.GetStringBuilder().ToString().Trim();
         
         //Assert
-        Assert.Equal("Choose a number after 1582", output);
+        Assert.EndsWith("Choose a number after 1581", output);
         }
     }
 

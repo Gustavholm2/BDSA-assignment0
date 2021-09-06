@@ -7,8 +7,21 @@ namespace lecture01
         public static void Main(string[] args)
         {
             Console.Write("write a year and hit [ENTER] >");
-            int.TryParse(Console.ReadLine(), out int input);
-            Console.WriteLine(IsLeapYear(input)? "yay" : "nay");
+            if (int.TryParse(Console.ReadLine(), out int input))
+            {
+                if (input >= 1582)
+                {
+                    Console.WriteLine(IsLeapYear(input)? "yay" : "nay");
+                }
+                else
+                {
+                    Console.WriteLine("Choose a number after 1581");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Not an int");
+            }
         }
 
         public static bool IsLeapYear(int year) 

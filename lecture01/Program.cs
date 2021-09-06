@@ -10,7 +10,11 @@ namespace lecture01
         }
 
         public static bool IsLeapYear(int year) {
-            throw new NotImplementedException();
+            if (year % 4 == 0) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

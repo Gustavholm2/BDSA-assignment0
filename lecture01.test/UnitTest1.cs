@@ -6,7 +6,8 @@ namespace lecture01.test
     public class UnitTest1
     {
         [Fact]
-        public void not_leap_year() {
+        public void not_leap_year() 
+        {
             Assert.False(Program.IsLeapYear(5));
         }
 
@@ -17,8 +18,15 @@ namespace lecture01.test
         }
 
         [Fact]
-        public void divisible_by_one_hundred() {
+        public void divisible_by_one_hundred() 
+        {
             Assert.False(Program.IsLeapYear(1900));
+        }
+
+        [Fact]
+        public void divisible_by_four_hundred() 
+        {
+            Assert.True(Program.IsLeapYear(2000));
         }
     }
 }
